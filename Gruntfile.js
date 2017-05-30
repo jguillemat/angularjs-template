@@ -122,7 +122,7 @@ module.exports = function (grunt) {
             singleRun: {
                 autoWatch: false,
                 singleRun: true,
-                browsers: ['Firefox']
+                browsers: ['PhantomJS']
             }
         }
     });
