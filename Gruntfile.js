@@ -127,5 +127,5 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('default', ['jshint:all', 'jscs:all', 'karma:singleRun', 'concat', 'uglify:concat']);
+    grunt.registerTask('default', ['jshint:all', 'jscs:all', 'concat', 'uglify:concat']);
 };
