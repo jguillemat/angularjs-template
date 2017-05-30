@@ -18,6 +18,7 @@ nodejsTemplate('sis-devel'){
     sh '''
     npm install grunt
     npm install grunt-cli
+    npm install load-grunt-tasks
     export PATH=$PATH:node_modules/grunt-cli/bin/
     grunt
     '''
