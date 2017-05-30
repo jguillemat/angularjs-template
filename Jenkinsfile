@@ -18,8 +18,9 @@ nodejsTemplate('sis-devel'){
     sh '''
     npm install grunt
     npm install grunt-cli
+    export PATH=$PATH:node_modules/grunt-cli/bin/
+    grunt
     '''
-    sh "grunt"
   }
 
   stage('Unit Tests') {
