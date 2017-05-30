@@ -16,9 +16,10 @@ nodejsTemplate('sis-devel'){
   stage('Build'){
     echo "Building project"
     sh '''
+    yum install bzip2
+    npm install
     npm install grunt
     npm install grunt-cli
-    npm install load-grunt-tasks
     export PATH=$PATH:node_modules/grunt-cli/bin/
     grunt
     '''
