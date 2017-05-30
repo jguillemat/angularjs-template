@@ -16,6 +16,7 @@ nodejsTemplate('sis-devel'){
   stage('Build'){
     echo "Building project"
     sh '''
+    npm install phantomjs
     npm install
     npm install grunt
     npm install grunt-cli
