@@ -25,14 +25,19 @@ nodejsTemplate('sis-devel'){
     '''
   }
 
-  stage('Unit Tests') {
-    echo "Running Unit Tests"
+  stage('Tests'){
+    echo "Running tests"
   }
 
-  stage('Analysis'){
+  stage('Image creation') {
+    echo "Creating new image"
+    sh "mkdir oc-build ; cp build/*.js oc-build/"
+    sh "oc start-build ${appName}-container --from-dir=oc-build --follow -n ${namespace}"
   }
 
   stage('Deploy in Dev'){
+    echo "Deploy application"
+    waitDeployIsComplete(namespace,appName)
   }
 
   stage('Integration Tests'){
@@ -41,5 +46,9 @@ nodejsTemplate('sis-devel'){
 
   stage('Exposing service in Dev'){
     echo "Creating route in Dev"
+    exposeSvc{
+      name=appName
+      project=namespace      
+    }
   }
 }
