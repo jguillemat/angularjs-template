@@ -32,7 +32,8 @@ nodejsTemplate('sis-devel'){
   stage('Image creation') {
     echo "Creating new image"
     sh "mkdir oc-build ; cp build/*.js oc-build/"
-    sh "oc start-build ${appName}-container --from-dir=oc-build --follow -n ${namespace}"
+    startBuild(project,appName)
+    echo "This is the build number: ${env.BUILD_NUMBER}"
   }
 
   stage('Deploy in Dev'){
@@ -48,7 +49,7 @@ nodejsTemplate('sis-devel'){
     echo "Creating route in Dev"
     exposeSvc{
       name=appName
-      project=namespace      
+      project=namespace
     }
   }
 }
