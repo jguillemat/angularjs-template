@@ -32,7 +32,7 @@ nodejsTemplate('sis-devel'){
   stage('Image creation') {
     echo "Creating new image"
     sh "mkdir oc-build ; cp build/*.js oc-build/"
-    startBuild(project,appName)
+    startBuild(namespace,appName)
     echo "This is the build number: ${env.BUILD_NUMBER}"
   }
 
