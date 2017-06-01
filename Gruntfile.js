@@ -48,7 +48,7 @@ module.exports = function (grunt) {
                     'app/bower_components/**/*.js',
                     '!app/**/*Spec.js'
                 ],
-                dest: 'build/<%= pkg.name %>-<%= pkg.version %>.js'
+                dest: 'dist/<%= pkg.name %>-<%= pkg.version %>.js'
             }
         },
         uglify: {
@@ -67,8 +67,8 @@ module.exports = function (grunt) {
                 dest: 'build/<%= pkg.name %>-<%= pkg.version %>.min.js'
             },
             concat: {
-                src: 'build/*.js',
-                dest: 'dist/<%= pkg.name %>-<%= pkg.version %>.min.js'
+                src: 'dist/*.js',
+                dest: 'build/<%= pkg.name %>-<%= pkg.version %>.min.js'
             }
         },
         watch: {
@@ -127,7 +127,7 @@ module.exports = function (grunt) {
         },
         copy: {
             main: {
-                src: ['app/index.html', 'app/assets/**', 'app/core/**/*.html'],
+                src: ['app/index.html', 'app/assets/**', 'app/core/**/*.html', 'build/*.js'],
                 dest: 'dist',
                 expand: true
             }
