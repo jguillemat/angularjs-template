@@ -126,11 +126,11 @@ module.exports = function (grunt) {
             }
         },
         copy: {
-          main: {
-            src: ['app/index.html', 'app/assets/**', 'app/core/**/*.html'],
-            dest: 'dist',
-            expand: true
-          }
+            main: {
+                src: ['app/index.html', 'app/assets/**', 'app/core/**/*.html'],
+                dest: 'dist',
+                expand: true
+            }
         }
     });
 
