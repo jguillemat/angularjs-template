@@ -128,7 +128,7 @@ module.exports = function (grunt) {
         copy: {
           main: {
             src: ['app/index.html', 'app/assets/**', 'app/core/**/*.html'],
-            dest: "dist",
+            dest: 'dist',
             expand: true
           }
         }
