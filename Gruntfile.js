@@ -45,10 +45,10 @@ module.exports = function (grunt) {
                     'app/core/app.js',
                     'app/core/app.routes.js',
                     'app/**/*.js',
-                    'app/bower_components/**/*.js',
+                    '!app/bower_components/**/*.js',
                     '!app/**/*Spec.js'
                 ],
-                dest: 'dist/<%= pkg.name %>-<%= pkg.version %>.js'
+                dest: 'build/<%= pkg.name %>-<%= pkg.version %>.js'
             }
         },
         uglify: {
@@ -67,8 +67,8 @@ module.exports = function (grunt) {
                 dest: 'build/<%= pkg.name %>-<%= pkg.version %>.min.js'
             },
             concat: {
-                src: 'dist/*.js',
-                dest: 'build/<%= pkg.name %>-<%= pkg.version %>.min.js'
+                src: 'build/*.js',
+                dest: 'dist/<%= pkg.name %>-<%= pkg.version %>.min.js'
             }
         },
         watch: {
@@ -127,7 +127,7 @@ module.exports = function (grunt) {
         },
         copy: {
             main: {
-                src: ['app/index.html', 'app/assets/**', 'app/core/**/*.html', 'build/*.js'],
+                src: ['app/index.html', 'app/assets/**', 'app/core/**/*.html', 'app/bower_components/**/*.js'],
                 dest: 'dist',
                 expand: true
             }
