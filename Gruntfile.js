@@ -129,7 +129,7 @@ module.exports = function (grunt) {
             main: {
                 expand: true,
                 cwd: 'app',
-                src: ['app/index.html', 'app/assets/**', 'app/core/**/*.html', 'app/bower_components/**/*.js', 'app/bower_components/**/*.css'],
+                src: ['index.html', 'assets/**', 'core/**/*.html', 'bower_components/**/*.js', 'bower_components/**/*.css'],
                 dest: 'dist'
             }
         }
