@@ -1,6 +1,6 @@
-@Library('github.com/victornc83/jenkins-library@master') _
+@Library('jenkins-library@master') _
 
-nodejsTemplate('stage'){
+nodejsTemplate('sis-devel'){
   def sonarUrl = env.SONAR_URL
   def version = env.CHANGE_ID
   def osProject = env.NAMESPACE
