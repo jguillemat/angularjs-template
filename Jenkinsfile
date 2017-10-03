@@ -16,6 +16,7 @@ nodejsTemplate('sis-devel'){
   stage('Build'){
     echo "Building project"
     sh '''
+    npm install bzip2
     npm install phantomjs-prebuilt
     npm install
     npm install grunt
